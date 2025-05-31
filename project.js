@@ -1,4 +1,3 @@
-// const BASE_URL = "https://raw.githubusercontent.com/WoXy-Sensei/currency-api/main/api";
 const BASE_URL = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies";
 
 const dropdown = document.querySelectorAll(".dropdown select");
@@ -43,7 +42,6 @@ const updateExchangerate = async () => {
     let response = await fetch(URL);
     let data = await response.json();
     let rate = data[fromCurr.value.toLowerCase()][toCurr.value.toLowerCase()];
-    console.log(rate);
 
     let finalAmount = rate * amount.value;
     msg.innerText = `${amount.value} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
